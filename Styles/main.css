@@ -1,0 +1,26 @@
+body 
+{
+    background-color: lightgrey;
+    background-image: url('https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: inline-block;
+    color: white;
+}
+
+tr 
+{
+    border: 2px solid black; /* Adjust color and thickness as needed */
+}
+
+#displayTXT 
+{
+    width: 90px;
+    height: 90px;
+}
+
+#displayTable 
+{
+    background-color: white;
+    opacity: 85%;
+}
