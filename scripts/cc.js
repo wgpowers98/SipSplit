@@ -32,7 +32,7 @@ function formatText(txt) //process to split the text into lines and parse the te
 
   let numberOfGuests = parseFloat(document.getElementById('numberOfGuests').value); //gets number of guests and makes float
   const lines  = txt.split('\n');
-  //console.log(lines);
+  console.log(lines);
   
 
   for (let i = 0; i < lines.length; i++) //loops each line of the recept
