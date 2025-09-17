@@ -41,7 +41,8 @@ function formatText(txt) //process to split the text into lines and parse the te
       if (dollarSearch != -1) 
       {
         
-        if (lines[i].search('\\SUBTOTAL') != -1) {break;} //once subtotal is found on line, breaks loop
+        
+        if (locEndOfRecept(lines[i])) {break;} //once subtotal is found on line, breaks loop
           
           let itemEntry; //creates item entry variable
 
@@ -54,14 +55,14 @@ function formatText(txt) //process to split the text into lines and parse the te
           {
             itemEntry = lines[i].slice(0,dollarSearch); //includes quality if beggining is not number
           }
-          addTableEntry(lines[i].slice(dollarSearch+1,lines[i].length),itemEntry); //calls function to add new row to able
+          addTableEntry("$" + lines[i].slice(dollarSearch+1,lines[i].length),itemEntry); //calls function to add new row to able
 
-          billTotal = billTotal + parseFloat(lines[i].slice(dollarSearch+1,lines[i].length)); //adds the amount for each item
+          billTotal = billTotal + parseFloat(lines[i].slice(dollarSearch+1, lines[i].length)); //adds the amount for each item
       }
     }
     console.log("Total $"+ billTotal);
-    addTableEntry('Total Amount',billTotal);
-    addTableEntry(`Per Guest (${numberOfGuests})`,`${Math.round((billTotal/numberOfGuests)*100)/100} per guest`);
+    addTableEntry('Total Amount',`$${Math.round(billTotal*100)/100}`);
+    addTableEntry(`Per Guest (${numberOfGuests})`,`$${Math.round((billTotal/numberOfGuests)*100)/100} per guest`);
     
 
 }
@@ -69,13 +70,13 @@ function formatText(txt) //process to split the text into lines and parse the te
   function addTableEntry(itemEntry,priceEntry) //function to add new row to displayed table
   {
     let newRow = document.createElement('tr'); //new row in table
-    newRow.classList.add("table-primary"); //adds class
+    newRow.classList.add("table-dark"); //adds class
 
-    let itemCol = document.createElement('td') //new column in row
-    itemCol.classList.add("table-primary"); //adds class
+    let itemCol = document.createElement('td'); //new column in row
+    itemCol.classList.add("table-dark"); //adds class
 
     let priceCol = document.createElement('td'); //new column in row
-    priceCol.classList.add("table-primary"); //adds class
+    priceCol.classList.add("table-dark"); //adds class
 
     itemCol.innerText = itemEntry;
     priceCol.innerText = priceEntry;
@@ -83,3 +84,24 @@ function formatText(txt) //process to split the text into lines and parse the te
     newRow.appendChild(priceCol);
     itemTable.appendChild(newRow);
   }
+
+
+  //function used to identify end of entries on recept
+  function locEndOfRecept(line) 
+  {
+    const keywords = 
+    ["SUBTOTAL",
+      "TOTAL", 
+      "cat"]; //keyswords to tell end of recept
+    const regex = new RegExp(keywords.join("|"), "gi"); // 'g' for global, 'i' for case-insensitive
+    const matches = line.match(regex); //searches list
+
+    if (matches) 
+      {
+        return true;
+      }
+      else 
+      {
+        return (false);
+      }
+    }

@@ -1,10 +1,9 @@
 body 
 {
     background-color: lightgrey;
-    background-image: url('https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg');
+    background-image: url('https://images.pexels.com/photos/7429625/pexels-photo-7429625.jpeg?_gl=1*fpedco*_ga*MTMzODkxNTYwMS4xNzU4MDgzMDQ4*_ga_8JE65Q40S6*czE3NTgwODMwNDgkbzEkZzEkdDE3NTgwODM5MjIkajIzJGwwJGgw');
     background-repeat: no-repeat;
     background-size: cover;
-    display: inline-block;
     color: white;
 }
 
@@ -16,11 +15,36 @@ tr
 #displayTXT 
 {
     width: 90px;
-    height: 90px;
+    height: 40px;
 }
 
-#displayTable 
+.btn 
 {
-    background-color: white;
-    opacity: 85%;
+    margin-left: auto;
+}
+
+.explainText 
+{
+    text-align: center;
+}
+
+.logo-content 
+{
+text-align: left;
+
+}
+
+
+.box 
+{
+    width: 10px;
+    height: 50px;
+}
+
+
+
+
+.receptModal 
+{
+    background-color: slategrey;
 }
