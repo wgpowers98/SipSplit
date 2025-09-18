@@ -11,51 +11,126 @@
     </head>
     <body>
         <script src="scripts/cc.js" type="module"></script>
-        <div class="container text-center explainText">
-            <div class="row">
-                <div class="col logo-content d-flex align-items-center">
-                    <h3>SipSplit</h3>
-                    <img src="Images/WineGlass2.svg" width="30" height="30">
-                </div>   
-            </div>    
-            
-        
-            <div class="row">
-                <div class="box"></div>
-             </div>
-        
-
-        
-             <div class="row">
-                <div class="col">
-                    <h2>Split bills with</h2>
-                    <h2>friends, stress-free</h2>
-                    <d1>No more awkward reminders, confusion, or unfair payments. </d1>
-                    <br>
-                    <d1> Share expenses with clearity.</d1>
-                </div>
-             </div>
-
-             <div class="row">
-                <div class="box"></div>
-             </div>
-             
-             <div class="row">
-                <div class="col">
-                     <label for="guests">Number of Guests:</label>
-                    <input value="2" type="number" id="numberOfGuests" min="1" max="40">
-                    <br>
-                    
+        <div class="mainFunctions">
+            <div class="container text-center mainFunctionsContainer">
+                <div class="row">
+                    <div class="col logo-content d-flex align-items-center">
+                        <h3>SipSplit</h3>
+                        <img src="Images/WineGlass2.svg" width="30" height="30">
+                    </div>   
+                </div>    
                 
-                    <input type="file" class="btn btn-secondary" id="imageInput" accept="image/*" style="display:none;"/>
-                    <label for="imageInput" class="btn btn-secondary">
-                        Select Recept 
-                        <button id="processBtn" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">Process Image</button>
-                    </label>
+            
+                <div class="row">
+                    <div class="box"></div>
+                </div>
+            
+
+            
+                <div class="row">
+                    <div class="col">
+                        <h2>Split bills with</h2>
+                        <h2>friends, stress-free</h2>
+                        <d1>No more awkward reminders, confusion, or unfair payments. </d1>
+                        <br>
+                        <d1> Share expenses with clearity.</d1>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="box"></div>
+                </div>
+                
+                <div class="row">
+                    <div class="col">
+                        <label for="guests">Number of Guests:</label>
+                        <input value="2" type="number" id="numberOfGuests" min="1" max="40">
+                        <br>
+                        
+                    
+                        <input type="file" class="btn btn-secondary" id="imageInput" accept="image/*" style="display:none;"/>
+                        <label for="imageInput" class="btn btn-secondary">
+                            Select Recept 
+                            <button id="processBtn" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">Process Image</button>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container text-center aboutContainer">
+            <div class="row"> <!--Divider-->
+                <div class="box"></div>
+             </div>
+            <div class="row">
+                <div class="col">
+                    <h2>About</h2>
+                    <d1>Splitting bills with friends shouldn't be stressful. We created this platform to make shared expenses
+                        fair, transparent, and effortless.
+                    </d1>
+                    <br>
+                    <img src="Images/118-1180060_receipts-hand-taking-photo-of-receipt.png.jpeg" class="receptPicture" width="150px" height="200px">
                 </div>
              </div>
-            
         </div>
+
+        <div class="row"> <!--Divider-->
+            <div class="box"></div>
+        </div>
+
+
+        <div class="container text-center faqContainer">
+            <div class="row">
+                <div class="col">
+                    <h2>FAQs</h2>
+                    <d1>Frequently Asked Questions</d1>
+                    
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="halfBox"></div>
+            </div>
+
+
+            <div class="row">
+                <div class="col">
+                        <button class="btn btn-dark faqButton" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false" aria-controls="collapseExample">How does this website work?</button>
+                        
+                        <div class="collapse" id="faq1">
+                        <div class="card card-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                        </div>
+                        <div class="halfBox"></div>
+                    </div>
+                </div>
+            </div>     
+            <div class="row">
+                <div class="halfBox"></div>
+            </div>
+            
+            
+            <div class="row">
+                <div class="col">
+                        <button class="btn btn-dark faqButton" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="collapseExample">Do I need to create an account to use it?</button>
+                        <div class="collapse" id="faq2">
+                        <div class="card card-body">
+                            Nope, though account usage is planned for the future
+                        </div>
+
+                    </div>
+                </div>
+            </div>  
+                        
+
+                    
+             
+        
+             
+
+
+            
+        
             
 
         

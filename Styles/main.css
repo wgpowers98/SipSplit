@@ -1,16 +1,35 @@
 body 
 {
-    background-color: slategrey;
+    background-color: black;
+
+    color: white;
+}
+
+.mainFunctions 
+{
     background-image: url('https://images.pexels.com/photos/7429625/pexels-photo-7429625.jpeg?_gl=1*fpedco*_ga*MTMzODkxNTYwMS4xNzU4MDgzMDQ4*_ga_8JE65Q40S6*czE3NTgwODMwNDgkbzEkZzEkdDE3NTgwODM5MjIkajIzJGwwJGgw');
     background-repeat: no-repeat;
     background-size: cover;
-    color: white;
+    border-radius: 10px;
+}
+
+.receptPicture 
+{
+    border-radius: 5%;
 }
 
 tr 
 {
     border: 2px solid black; /* Adjust color and thickness as needed */
 }
+
+.faqButton 
+{
+    width: 90%;
+    text-align: center;
+    border: 30%;
+}
+
 
 #displayTXT 
 {
@@ -41,6 +60,16 @@ text-align: left;
     height: 50px;
 }
 
+.halfBox 
+{
+    width: 10px;
+    height: 15px;
+}
+
+.card
+{
+    background-color: black;
+}
 
 
 
