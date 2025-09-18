@@ -91,8 +91,9 @@ function formatText(txt) //process to split the text into lines and parse the te
   {
     const keywords = 
     ["SUBTOTAL",
-      "TOTAL", 
-      "cat"]; //keyswords to tell end of recept
+      "TOTAL"]; //keyswords to tell end of recept
+    
+    
     const regex = new RegExp(keywords.join("|"), "gi"); // 'g' for global, 'i' for case-insensitive
     const matches = line.match(regex); //searches list
 
