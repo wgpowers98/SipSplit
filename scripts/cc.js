@@ -89,9 +89,10 @@ function formatText(txt) //process to split the text into lines and parse the te
   //function used to identify end of entries on recept
   function locEndOfRecept(line) 
   {
+    //keyswords to tell end of recept
     const keywords = 
     ["SUBTOTAL",
-      "TOTAL"]; //keyswords to tell end of recept
+      "TOTAL"]; 
     
     
     const regex = new RegExp(keywords.join("|"), "gi"); // 'g' for global, 'i' for case-insensitive
