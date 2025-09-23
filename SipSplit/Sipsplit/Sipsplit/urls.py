@@ -16,7 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from HomePage.views import homePage
+from BillSplit.views import editItems
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('',homePage),
+    path('billEntry',editItems)
 ]

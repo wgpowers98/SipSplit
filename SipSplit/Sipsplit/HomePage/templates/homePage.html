@@ -1,16 +1,17 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset='utf-8'>
-        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-        <title>SipSplit</title>
-        <script src='https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js'></script>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-        
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>SipSplit</title>
+    <script src='https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js'></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'HomePage/styles/main.css' %}">
     </head>
     <body>
-        <script src="scripts/cc.js" type="module"></script>
+        <script src="{% static 'scripts/cc.js'%}" type="module"></script>
         <div class="mainFunctions">
             <div class="container text-center mainFunctionsContainer">
                 <div class="row">
@@ -51,7 +52,7 @@
                         <input type="file" class="btn btn-secondary" id="imageInput" accept="image/*" style="display:none;"/>
                         <label for="imageInput" class="btn btn-secondary">
                             Select Recept 
-                            <button id="processBtn" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">Process Image</button>
+                            <button id="processBtn" class="btn btn-secondary">Process Image</button>
                         </label>
                     </div>
                 </div>
@@ -69,7 +70,7 @@
                         fair, transparent, and effortless.
                     </d1>
                     <br>
-                    <img src="Images/118-1180060_receipts-hand-taking-photo-of-receipt.png.jpeg" class="receptPicture" width="150px" height="200px">
+                    <img src="{% static 'Images/118-1180060_receipts-hand-taking-photo-of-receipt.png.jpeg'%}" class="receptPicture" width="150px" height="200px">
                 </div>
              </div>
         </div>
@@ -120,64 +121,8 @@
                     </div>
                 </div>
             </div>  
-                        
-
-                    
-             
         
-             
-
-
-            
-        
-            
-
-        
-
-
-           
-            
-
-        
-        
-
-
-
-
-
-                <!-- Modal Structure -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog ">
-                        <div class="modal-content receptModal">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">SUMMARY</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <h6>Dinner at KFC | 09/15/2025 | 12:00 PM</h6>
-                                <img src="Images\BarLine Loading Images Gif Animation.gif" id="displayTXT" alt="Computer man" style="display: none;" width="50px" height="50px"/>
-                                
-                                <table class="table table-dark">
-                                    <thead>
-                                        <th scope="col">Item</th>
-                                        <th scope="col">Price</th>
-                                    </thead>
-                                    <tbody id = "displayTable">
-                                    </tbody>
-                                </table>
-                            
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-        <!---->
-
-        
-        <link rel="stylesheet" href="Styles/main.css">
+        <link rel="stylesheet" href="{% static 'styles/main.css' %}">
     </body>
 </html>
 
