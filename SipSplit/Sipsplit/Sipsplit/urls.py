@@ -17,10 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from HomePage.views import homePage
-from BillSplit.views import editItems
+from BillSplit.views import editItems, displayItems
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',homePage),
-    path('billEntry',editItems)
+    path('billEntry',editItems),
+    path('itemSummary',displayItems)
 ]

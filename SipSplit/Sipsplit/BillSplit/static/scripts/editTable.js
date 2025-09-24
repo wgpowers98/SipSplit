@@ -1,5 +1,5 @@
 //Devloper: William Powers
-//Last Modified: 09/22/2025
+//Last Modified: 09/23/2025
 
 let addButton = document.getElementById('submitButton');
 let itemTable = document.getElementById('itemTable');
@@ -8,7 +8,8 @@ let itemName = document.getElementById('itemName');
 let itemPrice = document.getElementById('itemPrice');
 let itemID = 0;
 let itemSum = document.getElementById('itemSum');
-
+let completeButton = document.getElementById('completeButton');
+let numberOfGuests = document.getElementById('numberOfGuests');
 
 function addItem() 
 {
@@ -16,10 +17,14 @@ function addItem()
     dataTable.push(newEntry); //adds new entry to data table
     itemID++; //increments item id
     renderTable(dataTable); //re-renders table
-    sumItems(); //recalcuates item sum
+
+    setTotal(sumItems(dataTable)); //recalcuates item sum
+
     itemName.value = ''; //resets name field
     itemPrice.value = 0; //resets price field
 }
+
+
 
 function removeItem(itemID) 
 {
@@ -33,7 +38,7 @@ function removeItem(itemID)
             console.log("Error");
         }    
     renderTable(dataTable);
-    sumItems(); //recalcuates item sum
+    setTotal(sumItems(dataTable)); //recalcuates item sum
 }
 
 function resetArrayIds() //corrects array id list
@@ -51,7 +56,30 @@ function sumItems()
         {
             sumValue += Number(dataTable[i][1]);
         }
-    itemSum.innerHTML = `Total: $${sumValue}`;
+    return(sumValue); //returns of of items entered
+}
+
+
+//********Page Interaction Functions********
+
+function saveTable() //saves current table in local storage
+{
+    console.log('Saving');
+    let billTotal = sumItems(dataTable);
+
+    localStorage.setItem('dataTable', JSON.stringify(dataTable)); //saves in local storage
+    //sumItems()
+    localStorage.setItem('numberOfGuests',numberOfGuests.value); //saves number of guests (interacts slightly)
+    localStorage.setItem('billTotal',billTotal); //saves number of guests
+    localStorage.setItem('amountPerGuest',billTotal/numberOfGuests.value); //saves bill total divided by number of guests
+    
+    window.location.href = 'itemSummary'; //redirects to summary page
+    
+}
+
+function setTotal(itemTotal) //updates value displayed for total
+{
+    itemSum.innerHTML = `Total: $${itemTotal}`;
 }
 
 function renderTable(dataTable) 
@@ -83,7 +111,13 @@ function renderTable(dataTable)
 }
 
 
-addButton.addEventListener('click',addItem) //adds listen for when add item button is clicked
+
+
+//********Event Triggers********
+addButton.addEventListener('click',addItem); //adds listen for when add item button is clicked
+
+completeButton.addEventListener('click',saveTable); //calls save table function when complete button is clicked
+
 
 itemTable.addEventListener('click', function(event) //adds general event listener for table
 { 
