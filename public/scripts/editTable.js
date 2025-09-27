@@ -1,6 +1,8 @@
 //Devloper: William Powers
 //Last Modified: 09/23/2025
 
+import { validateNewEntry} from './validators.js';
+
 let addButton = document.getElementById('submitButton');
 let itemTable = document.getElementById('itemTable');
 let dataTable = []
@@ -16,18 +18,22 @@ let restaurantTime = document.getElementById('restaurantTime');
 function addItem() 
 {
     let newEntry = [itemName.value,itemPrice.value,itemID] //creates variable to hold new record
-    dataTable.push(newEntry); //adds new entry to data table
-    itemID++; //increments item id
-    renderTable(dataTable); //re-renders table
 
-    setTotal(sumItems(dataTable)); //recalcuates item sum
+    if (validateNewEntry(newEntry))
+    {
+        dataTable.push(newEntry); //adds new entry to data table
+        itemID++; //increments item id
+        renderTable(dataTable); //re-renders table
 
-    itemName.value = ''; //resets name field
-    itemPrice.value = 0; //resets price field
-    itemName.focus(); //rests user cursor to item name
+        setTotal(sumItems(dataTable)); //recalcuates item sum
+
+        itemName.value = ''; //resets name field
+        itemPrice.value = 0; //resets price field
+        itemName.focus(); //rests user cursor to item name
+    }
+
+    
 }
-
-
 
 function removeItem(itemID) 
 {
