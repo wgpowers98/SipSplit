@@ -1,0 +1,79 @@
+body 
+{
+    background-color: black;
+
+    color: white;
+}
+
+.mainFunctions 
+{
+    background-image: url('https://live.staticflickr.com/65535/54809425395_b3b6477b1c_b.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.receptPicture 
+{
+    border-radius: 5%;
+}
+
+tr 
+{
+    border: 2px solid black; /* Adjust color and thickness as needed */
+}
+
+.faqButton 
+{
+    width: 90%;
+    text-align: center;
+    border: 30%;
+}
+
+
+#displayTXT 
+{
+    width: 90px;
+    height: 40px;
+}
+
+.btn 
+{
+    margin-left: auto;
+}
+
+.explainText 
+{
+    text-align: center;
+}
+
+.logo-content 
+{
+text-align: left;
+
+}
+
+
+.box 
+{
+    width: 10px;
+    height: 50px;
+}
+
+.halfBox 
+{
+    width: 10px;
+    height: 15px;
+}
+
+.card
+{
+    background-color: black;
+}
+
+
+
+.receptModal 
+{
+    background-color: slategrey;
+}

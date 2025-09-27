@@ -1,0 +1,11 @@
+ body 
+{
+    background-color: black;
+    color: white;
+}
+
+.halfBox 
+{
+    width: 10px;
+    height: 15px;
+}
