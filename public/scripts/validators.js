@@ -6,14 +6,59 @@
 export function validateNewEntry(arr) 
 { 
     //test cases
-    if (isNotEmptyInArray(arr) && isNumeric(arr[1])) {return true;} //if all test cases pass
-   
+    let _isNotEmpty = isNotEmptyInArray(arr);
+    let _isNumerc = isNumeric(arr[1]);
+    let _isPositive = isPositive(arr[1]);
+    
+    console.log(`Entry Valid\nNot Empty: ${_isNotEmpty}\nIs Numeric: ${_isNumerc}\nIs Positive ${_isPositive}`); //displays validation
+    if (_isNotEmpty && 
+        _isNumerc && 
+        _isPositive)  //if all test cases pass
+        {
+            return true;
+        } 
     return false; //if one of the test cases fail
 }
-//---------
 
-export function isNotEmptyInArray(arr) //checks if any array values are empty
+export function validateSave(guestVal,arr) //validates entries are good, guests input is correct
 {
+    let _validateNumberOfGuests = validateNumberOfGuests(guestVal); //checks that guest value is correct
+    let _isNotEmptyInArray = isNotEmptyInArray(arr);
+    console.log(`Ready for Save\nValid Guest Val: ${_validateNumberOfGuests}\n Valid Array: ${_isNotEmptyInArray}`);
+    
+    if (_validateNumberOfGuests && 
+        _isNotEmptyInArray) {return true;} else {return false;}
+}
+
+//error messages
+
+
+
+
+//---validation functions---
+function validateNumberOfGuests(guestVal) 
+{
+    let _isNotEmpty = isNotEmpty(guestVal); //checks if value is not empty
+    let _isNumerc = isNumeric(guestVal); //checks if the value is numeric
+    let _isPositive = isPositive(guestVal); //checks if value is positive
+    //implement check that it is greater than 1
+
+    console.log(`Guest Input Valid\nNot Empty: ${_isNotEmpty}\nIs Numeric: ${_isNumerc}\nIs Positive ${_isPositive}\n`); //displays validation
+
+    if (_isNumerc && _isPositive && _isNotEmpty) {return true} //if tests pass
+    return false; //if tests fail
+}
+
+function isNotEmpty (val) 
+{
+    if (val === '') {return false;} //is empty return false
+    return true;
+}
+
+
+function isNotEmptyInArray(arr) //checks if any array values are empty (Why return true?)
+{
+    if (arr.length <= 0) {return false;} //if array has a length of 0 return false and end function 
     let notEmpty = true;
     for (let i = 0; i < arr.length; i++) 
         {
@@ -25,7 +70,7 @@ export function isNotEmptyInArray(arr) //checks if any array values are empty
         return notEmpty;    
 }
 
-export function isNumeric(val) //checks if a value is numeric
+function isNumeric(val) //checks if a value is numeric
 {
     if (Number(val) === 0) //checks if string converted to number is true
         {
@@ -34,10 +79,17 @@ export function isNumeric(val) //checks if a value is numeric
    return(true);
 }
 
-function arrayEmpty(arr) 
+function isPositive(val) 
 {
-
-} 
+    if (Number(val) > 0) 
+    {   
+        return true;
+    }
+    else 
+    {
+        return false;
+    }
+}
 
 
 
