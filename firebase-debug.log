@@ -1,51 +1,44 @@
-[debug] [2025-10-02T03:53:11.120Z] ----------------------------------------------------------------------
-[debug] [2025-10-02T03:53:11.131Z] Command:       /usr/local/bin/firebase /Users/williampowers/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase serve
-[debug] [2025-10-02T03:53:11.132Z] CLI Version:   14.17.0
-[debug] [2025-10-02T03:53:11.132Z] Platform:      darwin
-[debug] [2025-10-02T03:53:11.132Z] Node Version:  v20.18.2
-[debug] [2025-10-02T03:53:11.133Z] Time:          Wed Oct 01 2025 23:53:11 GMT-0400 (Eastern Daylight Time)
-[debug] [2025-10-02T03:53:11.134Z] ----------------------------------------------------------------------
+[debug] [2025-10-02T04:18:38.627Z] ----------------------------------------------------------------------
+[debug] [2025-10-02T04:18:38.638Z] Command:       /usr/local/bin/firebase /Users/williampowers/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase serve
+[debug] [2025-10-02T04:18:38.638Z] CLI Version:   14.17.0
+[debug] [2025-10-02T04:18:38.638Z] Platform:      darwin
+[debug] [2025-10-02T04:18:38.639Z] Node Version:  v20.18.2
+[debug] [2025-10-02T04:18:38.640Z] Time:          Thu Oct 02 2025 00:18:38 GMT-0400 (Eastern Daylight Time)
+[debug] [2025-10-02T04:18:38.641Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2025-10-02T03:53:11.509Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2025-10-02T03:53:11.511Z] > authorizing via signed-in user (wgpowers1998@gmail.com)
-[debug] [2025-10-02T03:53:11.512Z] [iam] checking project sip-split for permissions ["firebase.projects.get"]
-[debug] [2025-10-02T03:53:11.514Z] Checked if tokens are valid: true, expires at: 1759380332981
-[debug] [2025-10-02T03:53:11.515Z] Checked if tokens are valid: true, expires at: 1759380332981
-[debug] [2025-10-02T03:53:11.516Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/sip-split:testIamPermissions [none]
-[debug] [2025-10-02T03:53:11.517Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/sip-split:testIamPermissions x-goog-quota-user=projects/sip-split
-[debug] [2025-10-02T03:53:11.517Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/sip-split:testIamPermissions {"permissions":["firebase.projects.get"]}
-[debug] [2025-10-02T03:53:11.801Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/sip-split:testIamPermissions 200
-[debug] [2025-10-02T03:53:11.802Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/sip-split:testIamPermissions {"permissions":["firebase.projects.get"]}
-[debug] [2025-10-02T03:53:11.802Z] Checked if tokens are valid: true, expires at: 1759380332981
-[debug] [2025-10-02T03:53:11.802Z] Checked if tokens are valid: true, expires at: 1759380332981
-[debug] [2025-10-02T03:53:11.803Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/sip-split [none]
-[debug] [2025-10-02T03:53:11.905Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/sip-split 200
-[debug] [2025-10-02T03:53:11.906Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/sip-split {"projectNumber":"993353311354","projectId":"sip-split","lifecycleState":"ACTIVE","name":"Sip Split","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2025-09-04T23:20:27.581778Z"}
+[debug] [2025-10-02T04:18:38.961Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-10-02T04:18:38.963Z] > authorizing via signed-in user (wgpowers1998@gmail.com)
+[debug] [2025-10-02T04:18:38.963Z] [iam] checking project sip-split for permissions ["firebase.projects.get"]
+[debug] [2025-10-02T04:18:38.965Z] Checked if tokens are valid: true, expires at: 1759380332981
+[debug] [2025-10-02T04:18:38.965Z] Checked if tokens are valid: true, expires at: 1759380332981
+[debug] [2025-10-02T04:18:38.967Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/sip-split:testIamPermissions [none]
+[debug] [2025-10-02T04:18:38.967Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/sip-split:testIamPermissions x-goog-quota-user=projects/sip-split
+[debug] [2025-10-02T04:18:38.967Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/sip-split:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2025-10-02T04:18:39.179Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/sip-split:testIamPermissions 200
+[debug] [2025-10-02T04:18:39.180Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/sip-split:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2025-10-02T04:18:39.180Z] Checked if tokens are valid: true, expires at: 1759380332981
+[debug] [2025-10-02T04:18:39.181Z] Checked if tokens are valid: true, expires at: 1759380332981
+[debug] [2025-10-02T04:18:39.181Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/sip-split [none]
+[debug] [2025-10-02T04:18:39.284Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/sip-split 200
+[debug] [2025-10-02T04:18:39.284Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/sip-split {"projectNumber":"993353311354","projectId":"sip-split","lifecycleState":"ACTIVE","name":"Sip Split","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2025-09-04T23:20:27.581778Z"}
 [info] 
 [info] === Serving from '/Users/williampowers/Documents/GitHub/SipSplit'...
 [info] 
-[debug] [2025-10-02T03:53:11.910Z] Checked if tokens are valid: true, expires at: 1759380332981
-[debug] [2025-10-02T03:53:11.910Z] Checked if tokens are valid: true, expires at: 1759380332981
-[debug] [2025-10-02T03:53:11.911Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/sip-split/sites 
-[debug] [2025-10-02T03:53:12.349Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/sip-split/sites 200
-[debug] [2025-10-02T03:53:12.349Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/sip-split/sites {"sites":[{"name":"projects/sip-split/sites/sip-split","defaultUrl":"https://sip-split.web.app","type":"DEFAULT_SITE"}]}
-[debug] [2025-10-02T03:53:12.350Z] Checked if tokens are valid: true, expires at: 1759380332981
-[debug] [2025-10-02T03:53:12.350Z] Checked if tokens are valid: true, expires at: 1759380332981
-[debug] [2025-10-02T03:53:12.350Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/sip-split/webApps/-/config [none]
-[debug] [2025-10-02T03:53:12.784Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/sip-split/webApps/-/config 200
-[debug] [2025-10-02T03:53:12.785Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/sip-split/webApps/-/config {"projectId":"sip-split","storageBucket":"sip-split.firebasestorage.app","apiKey":"AIzaSyAnZIj518QIcUQwnrRwjp5hk87Za9NM2Ds","authDomain":"sip-split.firebaseapp.com","messagingSenderId":"993353311354"}
-[debug] [2025-10-02T03:53:12.792Z] Checked if tokens are valid: true, expires at: 1759380332981
-[debug] [2025-10-02T03:53:12.792Z] Checked if tokens are valid: true, expires at: 1759380332981
-[debug] [2025-10-02T03:53:12.792Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/sip-split [none]
-[debug] [2025-10-02T03:53:12.973Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/sip-split 200
-[debug] [2025-10-02T03:53:12.973Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/sip-split {"projectId":"sip-split","projectNumber":"993353311354","displayName":"Sip Split","name":"projects/sip-split","resources":{"hostingSite":"sip-split"},"state":"ACTIVE","etag":"1_5004cf8a-3996-4823-a772-c268c37fc704"}
+[debug] [2025-10-02T04:18:39.289Z] Checked if tokens are valid: true, expires at: 1759380332981
+[debug] [2025-10-02T04:18:39.289Z] Checked if tokens are valid: true, expires at: 1759380332981
+[debug] [2025-10-02T04:18:39.291Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/sip-split/sites 
+[debug] [2025-10-02T04:18:39.651Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/sip-split/sites 200
+[debug] [2025-10-02T04:18:39.651Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/sip-split/sites {"sites":[{"name":"projects/sip-split/sites/sip-split","defaultUrl":"https://sip-split.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2025-10-02T04:18:39.651Z] Checked if tokens are valid: true, expires at: 1759380332981
+[debug] [2025-10-02T04:18:39.651Z] Checked if tokens are valid: true, expires at: 1759380332981
+[debug] [2025-10-02T04:18:39.651Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/sip-split/webApps/-/config [none]
+[debug] [2025-10-02T04:18:40.174Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/sip-split/webApps/-/config 200
+[debug] [2025-10-02T04:18:40.175Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/sip-split/webApps/-/config {"projectId":"sip-split","storageBucket":"sip-split.firebasestorage.app","apiKey":"AIzaSyAnZIj518QIcUQwnrRwjp5hk87Za9NM2Ds","authDomain":"sip-split.firebaseapp.com","messagingSenderId":"993353311354"}
+[debug] [2025-10-02T04:18:40.185Z] Checked if tokens are valid: true, expires at: 1759380332981
+[debug] [2025-10-02T04:18:40.185Z] Checked if tokens are valid: true, expires at: 1759380332981
+[debug] [2025-10-02T04:18:40.186Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/sip-split [none]
+[debug] [2025-10-02T04:18:40.467Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/sip-split 200
+[debug] [2025-10-02T04:18:40.468Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/sip-split {"projectId":"sip-split","projectNumber":"993353311354","displayName":"Sip Split","name":"projects/sip-split","resources":{"hostingSite":"sip-split"},"state":"ACTIVE","etag":"1_5004cf8a-3996-4823-a772-c268c37fc704"}
 [info] i  hosting[sip-split]: Serving hosting files from: public {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mpublic\u001b[22m"}}
 [info] ✔  hosting[sip-split]: Local server: http://localhost:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5000\u001b[22m\u001b[24m"}}
-[info] i  hosting: ::1 - - [02/Oct/2025:03:53:26 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Safari/605.1.15" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [02/Oct/2025:03:53:26 +0000] \"GET / HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Safari/605.1.15\""}}
-[info] i  hosting: ::1 - - [02/Oct/2025:03:53:30 +0000] "GET /editItems.html HTTP/1.1" 200 - "http://localhost:5000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Safari/605.1.15" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [02/Oct/2025:03:53:30 +0000] \"GET /editItems.html HTTP/1.1\" 200 - \"http://localhost:5000/\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Safari/605.1.15\""}}
-[info] i  hosting: ::1 - - [02/Oct/2025:03:53:30 +0000] "GET /scripts/editTable.js HTTP/1.1" 200 - "http://localhost:5000/editItems.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Safari/605.1.15" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [02/Oct/2025:03:53:30 +0000] \"GET /scripts/editTable.js HTTP/1.1\" 200 - \"http://localhost:5000/editItems.html\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Safari/605.1.15\""}}
-[info] i  hosting: ::1 - - [02/Oct/2025:03:53:30 +0000] "GET /scripts/validators.js HTTP/1.1" 200 - "http://localhost:5000/editItems.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Safari/605.1.15" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [02/Oct/2025:03:53:30 +0000] \"GET /scripts/validators.js HTTP/1.1\" 200 - \"http://localhost:5000/editItems.html\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Safari/605.1.15\""}}
-[info] i  hosting: ::1 - - [02/Oct/2025:03:56:39 +0000] "GET /readItems.html HTTP/1.1" 200 - "http://localhost:5000/editItems.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Safari/605.1.15" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [02/Oct/2025:03:56:39 +0000] \"GET /readItems.html HTTP/1.1\" 200 - \"http://localhost:5000/editItems.html\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Safari/605.1.15\""}}
-[info] i  hosting: ::1 - - [02/Oct/2025:04:00:20 +0000] "GET /editItems.html HTTP/1.1" 200 - "http://localhost:5000/readItems.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Safari/605.1.15" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [02/Oct/2025:04:00:20 +0000] \"GET /editItems.html HTTP/1.1\" 200 - \"http://localhost:5000/readItems.html\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Safari/605.1.15\""}}
-[info] i  hosting: ::1 - - [02/Oct/2025:04:00:20 +0000] "GET /scripts/validators.js HTTP/1.1" 200 - "http://localhost:5000/editItems.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Safari/605.1.15" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [02/Oct/2025:04:00:20 +0000] \"GET /scripts/validators.js HTTP/1.1\" 200 - \"http://localhost:5000/editItems.html\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Safari/605.1.15\""}}
-[info] i  hosting: ::1 - - [02/Oct/2025:04:00:20 +0000] "GET /scripts/editTable.js HTTP/1.1" 200 - "http://localhost:5000/editItems.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Safari/605.1.15" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [02/Oct/2025:04:00:20 +0000] \"GET /scripts/editTable.js HTTP/1.1\" 200 - \"http://localhost:5000/editItems.html\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Safari/605.1.15\""}}
+[info] i  hosting: ::1 - - [02/Oct/2025:04:18:44 +0000] "GET /editItems.html HTTP/1.1" 200 - "http://localhost:5000/readItems.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Safari/605.1.15" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [02/Oct/2025:04:18:44 +0000] \"GET /editItems.html HTTP/1.1\" 200 - \"http://localhost:5000/readItems.html\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Safari/605.1.15\""}}
