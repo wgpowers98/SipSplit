@@ -15,11 +15,14 @@ let numberOfGuests = document.getElementById('numberOfGuests');
 let restaurantName = document.getElementById('restaurantName');
 let restaurantTime = document.getElementById('restaurantTime');
 
+localStorage.clear(); //clears previously saved local storage
+
 function addItem() 
 {
     let newEntry = [itemName.value,itemPrice.value,itemID] //creates variable to hold new record
     if (validateNewEntry(newEntry))
     {
+        completeButton.classList.remove('disabled'); //enables button after entry passes validation
         dataTable.push(newEntry); //adds new entry to data table
         itemID++; //increments item id
         renderTable(dataTable); //re-renders table
@@ -29,7 +32,7 @@ function addItem()
         itemName.value = ''; //resets name field
         itemPrice.value = 0; //resets price field
         itemName.focus(); //rests user cursor to item name
-    }
+    } else {alert('Invalid Entry');}
 
     
 }
@@ -37,7 +40,6 @@ function addItem()
 function removeItem(itemID) 
 {
     resetArrayIds(); //rests array ids
-    
     let index = dataTable[itemID][2];
     if (index > -1) //checks if array element exists
         {
@@ -47,6 +49,7 @@ function removeItem(itemID)
         }    
     renderTable(dataTable);
     setTotal(sumItems(dataTable)); //recalcuates item sum
+    if (dataTable.length === 0) {completeButton.classList.add('disabled');} //disables button if there are no items listed
 }
 
 function resetArrayIds() //corrects array id list
@@ -100,7 +103,7 @@ function sumItems()
             setTimeout(() => {
                 window.location.assign('readItems.html'); //redirects to summary page
             }, 50);
-        }
+        } else {alert('Form Contains Invalid Data');}
     }
 
     
@@ -173,3 +176,15 @@ if (itemTable) {
 } else {
     console.warn('itemTable element not found');
 }
+
+numberOfGuests.addEventListener('input', function(event) //checks if number of guests is a valid entry 
+{
+    if(validateSave(numberOfGuests.value,dataTable)) 
+        {
+            completeButton.classList.remove('disabled'); //enables button if guest number is valid
+        } 
+        else 
+        {
+            completeButton.classList.add('disabled'); //disbales button if guest number is invalid
+        }
+}); //calls when number of guests changes

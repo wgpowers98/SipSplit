@@ -32,20 +32,28 @@
             </div>
         </div>
         <div class="row">
-            <div class="col">
+            <div class="col-8">
                 <form onsubmit="return false;">
                     <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">Item</span>
-                    <input id = "itemName" type="text" name="itemEntry" required/>
-                    
-                    <span class="input-group-text" id="basic-addon1">Price</span>
-                    <input id="itemPrice" type="number" name="priceEntry" required/>
-                    <input id="submitButton" class="btn btn-secondary" type="submit" value="Add Item"></input>
+                        <label class="input-group-text" id="basic-addon1" for="itemName">Item</label>
+                        <input id = "itemName" type="text" name="itemEntry" required/>
+                    </div>
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" id="basic-addon1" for="itemPrice">Price</label>
+                        <input id="itemPrice" type="number" name="priceEntry" required/>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input id="submitButton" class="btn btn-secondary" type="submit" value="Add Item"></input>
+                    </div>
                 </form>
             </div>
         </div>
         
-        
+         <div class="row">
+            <div class="halfBox">
+
+            </div>
+        </div>
 
         <div class="row">
             <div class="col">
@@ -81,13 +89,15 @@
                 
                 <span class="input-group-text" id="basic-addon1">Guests</span>
                 <input type="number" id="numberOfGuests" name="numberOfGuests" value="2"/>
-                <input class="btn btn-secondary" type="button" id="completeButton" name="completeButton" value="Complete"/>
+                <input class="btn btn-secondary disabled" type="button" id="completeButton" name="completeButton" value="SPLIT"/> <!--Disabled by default-->
+                
         </div>
     </div>
     </div>
     <div class="row">
         <div class="col">
             <button class="btn btn-secondary" onclick="document.location='/index.html'">Home</button>
+            <button class="btn btn-secondary" onclick="document.location='/editItems.html'">Reset</button>
         </div>
     </div>
 </div>
