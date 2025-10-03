@@ -30,10 +30,11 @@ export function validateSave(guestVal,arr) //validates entries are good, guests 
         _isNotEmptyInArray) 
         {
             return true;
-        } else 
-            {
-                return false;
-            }
+        }
+        else
+        {
+            return false;
+        }
 }
 //---validation functions---
 
@@ -80,9 +81,9 @@ function isNumeric(val) //checks if a value is numeric
 {
     if (Number(val) === 0) //checks if string converted to number is true
         {
-            return(false);
+            return false;
         } 
-   return(true);
+   return true;
 }
 
 function isGreaterThan(val,limit) 

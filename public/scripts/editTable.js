@@ -32,7 +32,7 @@ function addItem()
         itemName.value = ''; //resets name field
         itemPrice.value = 0; //resets price field
         itemName.focus(); //rests user cursor to item name
-    } else {alert('Invalid Entry');}
+    } else {alert('Invalid Entry');} //error message
 
     
 }
@@ -67,7 +67,7 @@ function sumItems()
         {
             sumValue += Number(dataTable[i][1]);
         }
-    return(sumValue); //returns of of items entered
+    return(sumValue); //returns of items entered
 }
 
 
