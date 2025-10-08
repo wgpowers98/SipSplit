@@ -14,40 +14,56 @@
     <script src="scripts/editTable.js" type="module"></script>
 
     <div class="container text-center mainFunctionsContainer">
+<!--        <div class="row">-->
+<!--            <div class="col">-->
+<!--                <h1>Bill Entry</h1>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="row">-->
+<!--            <div class="col-2"></div>-->
+<!--            <div class="col-10">-->
+<!--                <div class="input-group mb-3">-->
+<!--                    <span class="input-group-text">Name</span>-->
+<!--                    <input type="text" placeholder="The Krusty Crab" id="restaurantName" required/>-->
+
+<!--                    <span class="input-group-text">Time</span>-->
+<!--                    <input type="datetime-local" id="restaurantTime"/>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
         <div class="row">
-            <div class="col">
-                <h1>Bill Entry</h1>
+            <div class="col-4"></div>
+            <div class="col-4">
+                <p>
+                    <a class="btn btn-secondary" data-bs-toggle="collapse" href="#addNewItemContainer" role="button" aria-expanded="false" aria-controls="addNewItemContainer" id="entryContainerButton">Entry Form</a>
+                </p>
             </div>
         </div>
-        
-        <div class="row">
-            <div class="col">
-                <div class="input-group mb-3">
-                    <span class="input-group-text">Name</span>
-                    <input type="text" placeholder="The Krusty Crab" id="restaurantName" required/>
-
-                    <span class="input-group-text">Time</span>
-                    <input type="datetime-local" id="restaurantTime"/>
+            <div class="collapse" id="addNewItemContainer">
+                <div class="row" id="entryForm">
+                    <div class="col">
+                        <form onsubmit="return false;">
+                            <div class="input-group mb-3">
+                                <label class="input-group-text" id="basic-addon1" for="itemName">Item</label>
+                                <input id = "itemName" type="text" name="itemEntry" required/>
+                            </div>
+                            <div class="input-group mb-3">
+                                <label class="input-group-text" id="basic-addon1" for="itemPrice">Bill Amount</label>
+                                <input id="itemPrice" type="number" name="priceEntry" required/>
+                            </div>
+                            <div class="input-group mb-3">
+                                <input id="submitButton" class="btn btn-secondary" type="submit" value="Add Item"></input>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-8">
-                <form onsubmit="return false;">
-                    <div class="input-group mb-3">
-                        <label class="input-group-text" id="basic-addon1" for="itemName">Item</label>
-                        <input id = "itemName" type="text" name="itemEntry" required/>
-                    </div>
-                    <div class="input-group mb-3">
-                        <label class="input-group-text" id="basic-addon1" for="itemPrice">Bill Amount</label> 
-                        <input id="itemPrice" type="number" name="priceEntry" required/>
-                    </div>
-                    <div class="input-group mb-3">
-                        <input id="submitButton" class="btn btn-secondary" type="submit" value="Add Item"></input>
-                    </div>
-                </form>
-            </div>
-        </div>
+
+
+
+
+
         
          <div class="row">
             <div class="halfBox">
@@ -84,8 +100,8 @@
         </div>
 
     <div class="row">
-        <div class="col">
-            <div class="input-group mb-3">
+        <div class="col-12">
+            <div class="input-group mb-12">
                 
                 <span class="input-group-text" id="basic-addon1">Number of People</span>
                 <input type="number" id="numberOfGuests" name="numberOfGuests" value="2"/>

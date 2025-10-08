@@ -1,11 +1,21 @@
  body 
 {
-    background-color: black;
+     background-repeat: repeat;
+     background-size: cover;
+     background-color: black;
     color: white;
+
 }
 
 .halfBox 
 {
     width: 10px;
     height: 15px;
+}
+
+#entryForm
+{
+    background-color: dimgray;
+    border: 15px;
+    border-radius: 10px;
 }
