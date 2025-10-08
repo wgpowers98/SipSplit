@@ -11,6 +11,14 @@
 </head>
 <body>
     <script src="scripts/readTable.js" type="module"></script>
+    <script src="scripts/dateTime.js" type="module"></script>
+    <div class="container text-center headContainer">
+        <div class="row">
+            <div class="Box">
+
+            </div>
+        </div>
+    </div>
 
     <div class="container text-center mainFunctionsContainer">
         <div class="row">
@@ -24,7 +32,7 @@
             </div>
         <div class="row"> <!--Divider-->
             <div class="col">
-                <h4>-------------------------------------------</h4>
+                <h4 class="dotDivider"></h4>
             </div>
         </div>
         </div>
@@ -32,12 +40,12 @@
             <div class="col">
                 
                 <table class="table-dark table-striped mx-auto w-auto text-center">
-                    <thread>
+                    <thead>
                         <tr>
                             <th>Name</th>
-                            <th>Price</th>
+                            <th>Bill Amount</th>
                         </tr>
-                    </thread>
+                    </thead>
                     <tbody id="itemTable"></tbody>
                 </table>
             </div>
@@ -45,27 +53,50 @@
 
         <div class="row"> <!--Divider-->
             <div class="col">
-                <h4>-------------------------------------------</h4>
+                <h4 class="dotDivider"></h4>
             </div>
         </div>
 
         <div class="row">
-            <div class="col">
+            <div class="col-7">
+               <h4>Number of Friends</h4>
+                <br>
+                <h4>Payment per friend</h4>
+                <br>
+                <h4>Date</h4>
+                <br>
+                <h4>Time</h4>
+            </div>
+            <div class="col-3">
                 <h4 id="numberOfGuests"></h4>
+                <br>
                 <h4 id="amountPerGuest"></h4>
-                <h4 id="totalAmount"></h4>
+                <br>
+                <h4 id="currentDate"></h4>
+                <br>
+                <h4 id="currentTime"></h4>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col">
+                <h4 class="dotDivider"></h4>
             </div>
         </div>
 
         <div class="row"> <!--Divider-->
-            <div class="col">
-                <h4>-------------------------------------------</h4>
+            <div class="col-7">
+
+                <h4>Amount</h4>
+            </div>
+            <div class="col-3">
+                <h4 id="totalAmount"></h4>
             </div>
         </div>
 
         <div class="row">
             <div class="col">
-                <button class="btn btn-secondary" onclick="document.location='/editItems.html'">New Split</button> <!--Reset Button (Change Name)-->
+                <button class="btn btn-secondary" onclick="document.location='/index.html'">Back to Home Page</button> <!--Reset Button (Change Name)-->
             </div>
         </div>
     </div>

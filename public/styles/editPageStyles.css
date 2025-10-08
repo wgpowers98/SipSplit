@@ -1,11 +1,26 @@
  body 
 {
-    background-color: black;
+     background-repeat: repeat;
+     background-size: cover;
+     background-color: black;
     color: white;
+
 }
+
+ #completeButton
+ {
+     width: 100%;
+ }
 
 .halfBox 
 {
     width: 10px;
     height: 15px;
+}
+
+#entryForm
+{
+    background-color: black;
+    border: 15px;
+    border-radius: 10px;
 }

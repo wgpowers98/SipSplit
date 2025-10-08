@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Edit Items</title>
+    <title>Bill Entry</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src='https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js'></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
@@ -13,50 +13,51 @@
     <script src="scripts/validators.js" type="module"></script>
     <script src="scripts/editTable.js" type="module"></script>
 
-    <div class="container text-center mainFunctionsContainer">
+    <div class="container container-dark text-center mainFunctionsContainer">
         <div class="row">
-            <div class="col">
-                <h1>Bill Entry</h1>
+            <div class="col-md-md-4"></div>
+            <div class="col-md-md-4">
+                <p>
+                    <a class="btn btn-secondary" data-bs-toggle="collapse" href="#addNewItemContainer" role="button" aria-expanded="false" aria-controls="addNewItemContainer" id="entryContainerButton">Add Item</a>
+                </p>
             </div>
         </div>
-        
-        <div class="row">
-            <div class="col">
-                <div class="input-group mb-3">
-                    <span class="input-group-text">Name</span>
-                    <input type="text" placeholder="The Krusty Crab" id="restaurantName" required/>
-
-                    <span class="input-group-text">Time</span>
-                    <input type="datetime-local" id="restaurantTime"/>
+            <div class="collapse" id="addNewItemContainer">
+                <div class="row" id="entryForm">
+                    <div class="col">
+                        <form onsubmit="return false;">
+                            <div class="input-group mb-3">
+                                <label class="input-group-text" for="itemName">Item</label>
+                                <input id = "itemName" type="text" name="itemEntry" required/>
+                            </div>
+                            <div class="input-group mb-3">
+                                <label class="input-group-text" for="itemPrice">Amount</label>
+                                <input id="itemPrice" type="number" name="priceEntry" required/>
+                            </div>
+                            <div class="input-group mb-3">
+                                <input id="submitButton" class="btn btn-secondary" type="submit" value="Add Item"></input>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <form onsubmit="return false;">
-                    <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">Item</span>
-                    <input id = "itemName" type="text" name="itemEntry" required/>
-                    
-                    <span class="input-group-text" id="basic-addon1">Price</span>
-                    <input id="itemPrice" type="number" name="priceEntry" required/>
-                    <input id="submitButton" class="btn btn-secondary" type="submit" value="Add Item"></input>
-                </form>
+
+         <div class="row">
+            <div class="halfBox">
+
             </div>
         </div>
-        
-        
 
         <div class="row">
             <div class="col">
-                <table class="table table-dark table-striped-columns table-hover"> <!--Currently not rendered-->
-                    <thread>
+                <table class="table table-dark table-striped-columns table-hover table-bordered"> <!--Currently not rendered-->
+                    <thead>
                         <tr>
                             <th>Name</th>
-                            <th>Price</th>
+                            <th>Bill Amount</th>
                             <th>Remove Entry</th>
                         </tr>
-                    </thread>
+                    </thead>
                     <tbody id="itemTable">
                         
                     </tbody>
@@ -76,18 +77,22 @@
         </div>
 
     <div class="row">
-        <div class="col">
-            <div class="input-group mb-3">
-                
-                <span class="input-group-text" id="basic-addon1">Guests</span>
+        <div class="col d-flex input-group">
+                <span class="input-group-text" id="basic-addon1">Add Friends</span>
                 <input type="number" id="numberOfGuests" name="numberOfGuests" value="2"/>
-                <input class="btn btn-secondary" type="button" id="completeButton" name="completeButton" value="Complete"/>
         </div>
     </div>
-    </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="halfBox"></div>
+                <input class="btn btn-secondary disabled" type="button" id="completeButton" name="completeButton" value="SPLIT"/> <!--Disabled by default-->
+                <div class="halfBox"></div>
+            </div>
+        </div>
     <div class="row">
         <div class="col">
-            <button class="btn btn-secondary" onclick="document.location='/index.html'">Home</button>
+            <button class="btn btn-secondary" onclick="document.location='/index.html'">Back to Home</button>
+            <button class="btn btn-secondary" onclick="document.location='/editItems.html'">Reset</button>
         </div>
     </div>
 </div>

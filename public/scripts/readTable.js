@@ -4,20 +4,15 @@
 let numberOfGuests = document.getElementById('numberOfGuests');
 let amountPerGuest = document.getElementById('amountPerGuest');
 let totalAmount = document.getElementById('totalAmount');
-let restaurantInformation = document.getElementById('restaurantInformation');
 
 
 
-numberOfGuests.innerHTML = `Number of friends ${localStorage.getItem('numberOfGuests')}`;
-amountPerGuest.innerHTML = `Payment per friend $${Math.round(localStorage.getItem('amountPerGuest') * 100) / 100}`;
-totalAmount.innerHTML = `Amount $${Math.round(localStorage.getItem('billTotal') * 100) / 100}`;
+numberOfGuests.innerHTML = ` ${localStorage.getItem('numberOfGuests')}`;
+amountPerGuest.innerHTML = `$${Math.round(localStorage.getItem('amountPerGuest') * 100) / 100}`;
+totalAmount.innerHTML = `$${Math.round(localStorage.getItem('billTotal') * 100) / 100}`;
 
 
 renderTable(JSON.parse(localStorage.getItem('dataTable') || '[]'),localStorage.getItem('numberOfGuests'));
-
-
-
-restaurantInformation.innerHTML = `Dinner at ${localStorage.getItem('restaurantName')} | ${localStorage.getItem('restaurantTime')}`;
 
 function renderTable(dataTable,numberOfGuests) 
 {

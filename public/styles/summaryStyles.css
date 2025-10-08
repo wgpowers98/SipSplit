@@ -2,5 +2,40 @@ body
 {
     background-color: black;
     color: white;
-    text-align: center;
+    text-align: left;
+}
+
+.mainFunctionsContainer
+{
+    background-color: #25282E;
+    border-color: black;
+    border-left: 20px;
+    border-right: 20px;
+    border-radius: 15px;
+    line-height: 1.5;
+}
+
+.dotDivider
+{
+    border-top-style: dotted;
+}
+
+
+
+.Box
+{
+    width: 10px;
+    height: 40px;
+}
+
+.halfBox
+{
+    width: 10px;
+    height: 20px;
+}
+
+
+table
+{
+    font-size: x-large;
 }

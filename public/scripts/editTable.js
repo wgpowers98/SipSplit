@@ -1,7 +1,7 @@
 //Devloper: William Powers
 //Last Modified: 09/23/2025
 
-import { validateNewEntry} from './validators.js';
+import { validateNewEntry,validateSave} from './validators.js';
 
 let addButton = document.getElementById('submitButton');
 let itemTable = document.getElementById('itemTable');
@@ -12,15 +12,16 @@ let itemID = 0;
 let itemSum = document.getElementById('itemSum');
 let completeButton = document.getElementById('completeButton');
 let numberOfGuests = document.getElementById('numberOfGuests');
-let restaurantName = document.getElementById('restaurantName');
-let restaurantTime = document.getElementById('restaurantTime');
+
+localStorage.clear(); //clears previously saved local storage
 
 function addItem() 
 {
     let newEntry = [itemName.value,itemPrice.value,itemID] //creates variable to hold new record
-
+    newEntry[1] = Math.round(newEntry[1] * 100) / 100; //rounds price entry value to second digit
     if (validateNewEntry(newEntry))
     {
+        completeButton.classList.remove('disabled'); //enables button after entry passes validation
         dataTable.push(newEntry); //adds new entry to data table
         itemID++; //increments item id
         renderTable(dataTable); //re-renders table
@@ -28,9 +29,9 @@ function addItem()
         setTotal(sumItems(dataTable)); //recalcuates item sum
 
         itemName.value = ''; //resets name field
-        itemPrice.value = 0; //resets price field
+        itemPrice.value = ''; //resets price field
         itemName.focus(); //rests user cursor to item name
-    }
+    } else {alert('Invalid Entry');} //error message
 
     
 }
@@ -38,7 +39,6 @@ function addItem()
 function removeItem(itemID) 
 {
     resetArrayIds(); //rests array ids
-    
     let index = dataTable[itemID][2];
     if (index > -1) //checks if array element exists
         {
@@ -48,6 +48,7 @@ function removeItem(itemID)
         }    
     renderTable(dataTable);
     setTotal(sumItems(dataTable)); //recalcuates item sum
+    if (dataTable.length === 0) {completeButton.classList.add('disabled');} //disables button if there are no items listed
 }
 
 function resetArrayIds() //corrects array id list
@@ -65,44 +66,44 @@ function sumItems()
         {
             sumValue += Number(dataTable[i][1]);
         }
-    return(sumValue); //returns of of items entered
+    return(sumValue); //returns of items entered
 }
 
 
 //********Page Interaction Functions********
 
-function saveTable() //saves current table in local storage
-{
-    console.log('Saving');
-    let billTotal = sumItems(dataTable);
+    function saveTable() //saves current table in local storage
+    {
+    if (validateSave(numberOfGuests.value,dataTable)) //checks if data is valid
+        {
+            console.log('Saving');
+            let billTotal = sumItems(dataTable);
+            // save to localStorage (synchronous)
+            try {
+                localStorage.setItem('dataTable', JSON.stringify(dataTable)); //saves in local storage
+                //sumItems()
+                if (numberOfGuests) {
+                    localStorage.setItem('numberOfGuests', numberOfGuests.value); //saves number of guests (interacts slightly)
+                    localStorage.setItem('amountPerGuest', billTotal / Number(numberOfGuests.value)); //saves bill total divided by number of guests
+                } else {
+                    console.warn('numberOfGuests element not found; skipping numberOfGuests/amountPerGuest storage');
+                }
+                
+                localStorage.setItem('billTotal', billTotal); //saves bill total
 
-    // save to localStorage (synchronous)
-    try {
-        localStorage.setItem('dataTable', JSON.stringify(dataTable)); //saves in local storage
-        //sumItems()
-        if (numberOfGuests) {
-            localStorage.setItem('numberOfGuests', numberOfGuests.value); //saves number of guests (interacts slightly)
-            localStorage.setItem('amountPerGuest', billTotal / Number(numberOfGuests.value)); //saves bill total divided by number of guests
-        } else {
-            console.warn('numberOfGuests element not found; skipping numberOfGuests/amountPerGuest storage');
-        }
-        
-        localStorage.setItem('billTotal', billTotal); //saves bill total
-        localStorage.setItem('restaurantName',restaurantName.value) //saves name of resturant
-        localStorage.setItem('restaurantTime',restaurantTime.value) //saves time of resturant
+                console.log('Saved to localStorage', { billTotal: billTotal, guests: numberOfGuests ? numberOfGuests.value : null });
+            } catch (e) {
+                console.error('Failed to save to localStorage', e);
+            }
 
-        console.log('Saved to localStorage', { billTotal: billTotal, guests: numberOfGuests ? numberOfGuests.value : null });
-    } catch (e) {
-        console.error('Failed to save to localStorage', e);
+            // Redirect to summary page. Use assign (creates history entry) or replace (replaces current entry).
+            setTimeout(() => {
+                window.location.assign('readItems.html'); //redirects to summary page
+            }, 50);
+        } else {alert('Form Contains Invalid Data');}
     }
 
-    // Redirect to summary page. Use assign (creates history entry) or replace (replaces current entry).
-    // Add a tiny timeout to ensure storage writes and any UI updates flush before navigation.
-    setTimeout(() => {
-        // If your site is hosted at a sub-path, consider using a relative path like './readItems.html'
-        window.location.assign('readItems.html'); //redirects to summary page
-    }, 50);
-}
+    
 
 function setTotal(itemTotal) //updates value displayed for total
 {
@@ -172,3 +173,15 @@ if (itemTable) {
 } else {
     console.warn('itemTable element not found');
 }
+
+numberOfGuests.addEventListener('input', function(event) //checks if number of guests is a valid entry 
+{
+    if(validateSave(numberOfGuests.value,dataTable)) 
+        {
+            completeButton.classList.remove('disabled'); //enables button if guest number is valid
+        } 
+        else 
+        {
+            completeButton.classList.add('disabled'); //disbales button if guest number is invalid
+        }
+}); //calls when number of guests changes
