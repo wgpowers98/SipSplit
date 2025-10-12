@@ -4,7 +4,7 @@
      background-size: cover;
      background-color: black;
     color: white;
-
+     display: flex;
 }
 
  #completeButton
@@ -18,9 +18,37 @@
     height: 15px;
 }
 
-#entryForm
-{
-    background-color: black;
-    border: 15px;
-    border-radius: 10px;
-}
+ #itemName
+ {
+     width: 25%;
+     justify-content: center !important;
+ }
+
+ #itemPrice
+ {
+     width: 23%;
+     justify-content: center !important;
+ }
+
+ #numberOfGuests
+ {
+     width: 20.5%;
+     justify-content: center !important;
+ }
+
+ @media only screen and (max-width: 768px) /*needs to work on ipad air* /*/
+ {
+     #itemName
+     {
+         width: 52.7% !important;
+     }
+
+     #itemPrice
+     {
+         width: 46% !important;
+     }
+     #numberOfGuests
+     {
+         width: 40%;
+     }
+ }

@@ -53,18 +53,18 @@ function removeItem(itemID)
 
 function resetArrayIds() //corrects array id list
 {
-    for (let i = 0; i < dataTable.length; i++) 
+    for (let Iterate = 0; Iterate < dataTable.length; Iterate++) 
         {
-            dataTable[i][2] = i; //resets each array id
+            dataTable[Iterate][2] = Iterate; //resets each array id
         }
 }
 
 function sumItems() 
 {
     let sumValue = 0;
-    for (let i = 0; i < dataTable.length; i++) 
+    for (let Iterate = 0; Iterate < dataTable.length; Iterate++) 
         {
-            sumValue += Number(dataTable[i][1]);
+            sumValue += Number(dataTable[Iterate][1]);
         }
     return(sumValue); //returns of items entered
 }
@@ -116,7 +116,7 @@ function renderTable(dataTable)
     
     itemTable.innerHTML = ""; //clears current table contents
 
-    for (let i = 0; i < dataTable.length; i++) 
+    for (let Iterate = 0; Iterate < dataTable.length; Iterate++) 
         {
             let tableRow = document.createElement('tr'); //creates new row
             let itemCol = document.createElement('td'); //creates row to hold item
@@ -125,11 +125,11 @@ function renderTable(dataTable)
 
             let removeButton = document.createElement('button');
 
-            itemCol.innerHTML =  dataTable[i][0];
-            priceCol.innerHTML =  `$${dataTable[i][1]}`;
+            itemCol.innerHTML =  dataTable[Iterate][0];
+            priceCol.innerHTML =  `$${dataTable[Iterate][1]}`;
             removeButton.innerHTML = 'Remove Item';
 
-            removeButton.setAttribute('rowID',i); //sets rowId attribute to element
+            removeButton.setAttribute('rowID',Iterate); //sets rowId attribute to element
             removeButton.classList.add('removeButton'); 
             removeButton.classList.add('btn'); 
             removeButton.classList.add('btn-secondary'); 
